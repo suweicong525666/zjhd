@@ -1,5 +1,6 @@
 const baseUrl = 'https://api.shupaiyun.com';
 // const baseUrl = 'http://192.168.0.142:688';
+// const baseUrl = 'https://sptest.litchon.com';
 const request = (url = '', type = '', date = {}, header = {
 }) => {
     return new Promise((resolve, reject) => {

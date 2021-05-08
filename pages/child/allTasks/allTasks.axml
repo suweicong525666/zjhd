@@ -5,7 +5,7 @@
 						<image class="icon-80" src="{{item.Img}}" mode="widthFix"></image>
 						<view class="margin-left-sm" style="height:80rpx">
 							<view class="text-28 bold text-F5741D flex align-center" style="height:50%;padding-top:4rpx">
-								<text>{{item.Title}}</text>
+								<text class="text-overflow" style="max-width: 200rpx;">{{item.Title}}</text>
 								<view class="flex align-center margin-left-sm">
 									<image a:if="item.Type==2" class="icon-34" src="/static/image/jfb.png" mode="widthFix"></image>
 									<image a:else class="icon-34" src="/static/image/jb.png" mode="widthFix"></image>

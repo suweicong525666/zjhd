@@ -51,7 +51,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="text-center margin-top-sm relative" a:if="{{sdaliggList&&userInfo.NumberCompletions>=sdaliggList[0].NumberPopups&&sdaliggList[0].IsDone==false&&signBanShow}}">
+		<view class="text-center margin-top-sm relative" >
 			<image style="width:688rpx" src="/static/image/xs.png" mode="widthFix"></image>
 			<view class="xianshiText flex align-center">
 				<image class="icon-30" src="/static/image/jfb.png" mode="widthFix"></image>
@@ -90,18 +90,14 @@
 					<image class="icon-40" src="../../../static/image/qd_y.png" mode="widthFix"></image>
 					<view class="flex align-center margin-lr-sm">
 								<view class="flex align-center margin-lr-sm">
-						<text class="text-40 bold text-black">获得</text>
+					<text class="text-40 bold text-black">获得</text>
 						<text class="text-56 text-FF790B">{{list.SignOutputList[todayIndex].RewardAmount}}</text>
-							<text class="text-28 text-999999" >{{list.Qd==5?'集分宝':'金币'}}</text>
+							<text class="text-28 text-999999" >{{list.SignOutputList[todayIndex].Type==0?'金币':'集分宝'}}</text>
 					</view>
 					</view>
 					<image class="icon-40" src="../../../static/image/qd_z.png" mode="widthFix"></image>
 				</view>
-				<view class="text-center margin-top-xs">
-					<text class="text-28 text-999999">明天签到可得</text>
-          <text class="text-30 text-FF790B" >{{list.SignOutputList[todayIndex+1].RewardAmount}}</text>
-					<text class="text-28 text-999999" >{{list.Qd==5?'集分宝':'金币'}}</text>
-				</view>
+			
 				<view class="button" onTap="close">
 					知道了
 				</view>
@@ -142,7 +138,7 @@
 						<image class="icon-80" src="{{item.Img}}" mode="widthFix"></image>
 						<view class="margin-left-sm" style="height:80rpx">
 							<view class="text-28 bold text-F5741D flex align-center" style="height:50%;padding-top:4rpx">
-								<text>{{item.Title}}</text>
+								<text class="text-overflow" style="max-width: 200rpx;">{{item.Title}}</text>
 								<view class="flex align-center margin-left-sm">
 									<image a:if="item.Type==2" class="icon-34" src="/static/image/jfb.png" mode="widthFix"></image>
 									<image a:else class="icon-34" src="/static/image/jb.png" mode="widthFix"></image>
