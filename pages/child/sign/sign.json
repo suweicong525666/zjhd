@@ -1,0 +1,11 @@
+{
+   "defaultTitle": "签到",
+  "allowsBounceVertical": "NO",
+  "titleBarColor": "#FF9516",
+  "transparentTitle": "none",
+  "titlePenetrate": "NO",
+  "usingComponents": {
+    "subscribe-msg": "plugin://subscribeMsg/subscribe-msg",
+    "ad-task": "plugin://myPlugin/ad-task"
+  }
+}

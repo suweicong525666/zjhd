@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "反馈回复",
+  "titleBarColor": "#FFFFFF",
+  "allowsBounceVertical": "NO",
+  "transparentTitle": "none",
+  "titlePenetrate": "YES",
+  "usingComponents": {}
+}

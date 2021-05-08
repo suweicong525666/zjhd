@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "指尖互动",
+  "allowsBounceVertical": "NO",
+  "titleBarColor": "#FFFFFF",
+  "transparentTitle": "auto",
+  "titlePenetrate": "YES",
+    "usingComponents": {
+      "ad-task": "plugin://myPlugin/ad-task"
+  }
+}

@@ -1,0 +1,17 @@
+@import '/components/colorui/main.acss';
+@import '/components/colorui/icon.acss';
+@import '/components/colorui/common.acss';
+@import "/components/colorui/Animations.acss";
+.ami{
+		animation: myfirst 2s linear 2s infinite alternate;
+	}
+	@keyframes myfirst
+	{
+		0% {
+			transform: translateY(0);
+		}
+		100% {transform: translateY(20px)}
+	}
+page {
+  background: #f7f7f7;
+}

@@ -1,0 +1,57 @@
+<view>
+		<!-- 头部tab栏 -->
+		<view class="bg-white flex justify-around fixed-top" style="height: 90rpx;padding-top: 25rpx;">
+			<view class="text-28 relative {{index==tabIndex?'text-FF9516 bold':'text-999999'}}"  a:for="{{tabList}}" a:for-index="index" onTap="tab" data-index="{{index}}" >
+				<view class="text-center">
+					{{item}}
+				</view>
+				<text class="border-b" a:if="{{index==tabIndex}}"></text>
+			</view>
+		</view>
+		<view class="fixed-top-b"></view>
+		<view class="" a:if="{{list}}">
+			<view class="padding">
+				<view class="radius-20 flex justify-between padding margin-bottom-sm bg-white" a:for="{{list}}">
+					<view class="flex">
+             <view>
+                <image a:if="{{tabIndex==0&&item.Type==2}}" class="icon-80" src="/static/image/tx.png" mode="aspectFit"></image>
+                <image a:if="{{tabIndex==0&&item.Type==3}}" class="icon-80" src="/static/image/rw_lp.png" mode="aspectFit"></image>
+                <image a:if="{{tabIndex==1}}" class="icon-80" src="/static/image/rw_lp.png" mode="widthFix"></image>
+             </view>
+						<view class="margin-left-sm" style="height:80rpx">
+							<view class="text-28 bold text-F5741D flex align-center" style="height:50%;padding-top:4rpx">
+								<view class="flex align-center ">
+									<text class="text-F5741D text-24 bold  padding-top-xss" a:if="{{tabIndex==0}}">{{item.Title}}</text>
+									<text class="text-F5741D text-24 bold  padding-top-xss" a:else>任务奖励</text>
+								</view>
+							</view>
+							<view class="text-999999 text-24 flex align-end" style="height:50%" >
+								<text a:if="{{tabIndex==0}}">{{item.Subtitle}}</text>
+								<text a:else>任务完成</text>
+							</view>
+						</view>
+					</view>
+					<view class="">
+						<view class="margin-top-xs text-F5741D text-right">
+							{{item.RecordType==2?'-':''}}{{item.RecordType==4?'+':''}}{{item.RecordType==7?'-':''}}{{item.ChangeValue}}
+						</view>
+						<view class="margin-top-xs text-999999">
+							{{item.CreateTime}}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="text-999999 list-0" a:if="{{list.length==0}}">
+			<view class="text-center">
+				<image src="../../../static/image/zw.png" mode="widthFix"></image>
+			</view>
+			<view class="text-center">
+				暂无明细~~
+			</view>
+		</view>
+		<view class="text-center text-999999 padding-bottom-xl" a:if="{{list.length>0&&noMore}}">
+			暂无更多明细~~
+		</view>
+		<!-- <biaofun-loading-more :loading="loading" :loadall="loadAll"></biaofun-loading-more> -->
+	</view>

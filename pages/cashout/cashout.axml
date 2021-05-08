@@ -1,0 +1,108 @@
+<view>
+		<view  style="background-color: #FEB647;height:{{statusBarHeight}}px"></view>
+		<view class="relative">
+			<view class="text-center">
+				<image class="cashOut-banner" src="../../static/image/banner2.png" mode="widthFix"></image>
+			</view>
+			<view class="flex justify-end">
+				<view class="flex align-center gz" onTap="jump_activityRules">
+					<image class="icon-40 margin-left-xs" src="../../static/image/gz.png" mode="widthFix"></image>
+					<text class="margin-left-xs">活动规则</text>
+				</view>
+			</view>
+		</view>
+		<!-- 主体内容 -->
+		<view class="cashOut-main">
+			<view class="bg-white flex radius-20 margin padding-tb-sm" a:for="{{list}}">
+				<view class="relative">
+					<image class='main-img' src="{{item.Img}}" mode="aspectFit"></image>
+					<text class="Quota text-30 text-white">{{item.Quota}}元</text>
+				</view>
+				<view class="flex-70">
+					<view class="text-30 text-black bold margin-top-sm">
+						{{item.Quota}}元红包限{{item.Quantity}}份
+					</view>
+					<view class="flex justify-between margin-top-sm">
+						<text class="text-E8463B text-28 bold">{{item.Coin}}金币</text>
+						<text class="text-24 text-999999">共{{item.Number}}人参与</text>
+					</view>
+					<view class="kg margin-top-sm" a:if="{{item.DrawStatus==1}}">
+						<text>{{item.DrawTime}}自动开奖</text>
+						<text class="cashGo"onTap="choujiang" data-id="{{item.Id}}" data-coin="{{item.Coin}}" data-drawTime="{{item.DrawTime}}">我要试试</text>
+					</view>
+					<view class="kg margin-top-sm" a:else>
+						<text>{{item.DrawTime}}已开奖</text>
+						<text class="cashGo2" >我要试试</text>
+					</view>
+				</view>
+			</view>
+		</view>
+     
+		<!-- 模态框 -->
+		<view class="modal" a:if="{{openModal}}"></view>
+		<view class="qd-modal" a:if="{{openModal&&join==0}}">
+			<view class="text-center relative">
+				<view class="text-40 text-white hf">
+					抽奖需花费
+				</view>
+			</view>
+			<view class="qd-white-box">
+      	<image class="qdImg" style="width:100%" src="../../../static/image/qd_1.png" mode="widthFix"></image>
+				<view class="flex align-center justify-center child">
+					<image class="icon-40" src="../../../static/image/qd_y.png" mode="widthFix"></image>
+					<view class="flex align-center margin-lr-sm">
+						<text class="text-56 text-E88918">{{Coin}}</text>
+						<text class="text-40 bold text-black">金币</text>
+					</view>
+					<image class="icon-40" src="../../../static/image/qd_z.png" mode="widthFix"></image>
+				</view>
+				<view class="flex justify-center">
+					<view class="text-center margin-top-xs" style="width:300rpx">
+						<text class="text-28 text-999999">开奖后,奖励会直接发放到余额账户中,</text>
+						<text class="text-30 text-E88918" @click="jump_balance">“我的余额”</text>
+						<text class="text-28 text-999999">记得去查看哦</text>
+					</view>
+				</view>
+				<view class="button" onTap="Join" style="background-color:#E88918 ;">
+					参与抽奖
+				</view>
+			</view>
+			<view class="text-center close">
+				<image onTap="close" class="icon-70" src="../../../static/image/del.png" mode="widthFix"></image>
+			</view>
+		</view>
+		<!-- 报名成功 -->
+		<view class="qd-modal" a:if="{{openModal&&join==1}}">
+			<view class="text-center relative">
+				<image src="../../static/image/bmcg.png" style="width:80%" mode="widthFix"></image>
+        <view class="modal_button" onTap="close" >
+              立即领取
+          </view>
+				<view class="text-center close2">
+					<image onTap="close" class="icon-70" src="../../../static/image/del.png" mode="widthFix"></image>
+				</view>
+				<view class="gg relative" style="margin:20rpx auto;padding-bottom:{{alBanShow?'0.25rem':''}}">
+              <view class="flex justify-center" >
+                  	<ad class=""
+                      unit-id ="ad_tiny_2021002139665742_202104272200009607"
+                      onLoad ="onRenderSuccess"
+						/>
+              </view>
+						<swiper class="screen-swipers  dotStyle?'square-dot':'round-dot'" a:if="{{alBanShow==false}}" :indicator-dots="true" :circular="true"
+						 :autoplay="false" interval="5000" duration="500">
+						 <swiper-item a:for="{{bmcgBanner}}">
+							 <view class=""  onTap="tabNav(item.JumpType,item)" data-JumpType="{{item.JumpType}}" data-item="{{item}}">
+							 	<image src="{{item.Img}}" mode="scaleToFill" style="width: 588rpx;height: 114rpx" ></image>
+							 </view>
+						 </swiper-item>
+						</swiper>
+				</view>
+				<view class="Join-text3">
+					{{DrawTime}}自动开奖，记得回来查看哦
+				</view>
+				<view class="Join-text2" onTap="close" style="opacity:0">
+					我知道了
+				</view>
+			</view>
+		</view>
+	</view>

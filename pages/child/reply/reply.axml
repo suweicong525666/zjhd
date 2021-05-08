@@ -1,0 +1,76 @@
+<view>
+		<view class="bg-white padding margin margin-top-0 radius-20 padding-bottom-0">
+			<view class="flex">
+				<image class="icon-80 radius-all" src="{{userInfo.HeadImg}}" mode="widthFix"></image>
+				<view class="margin-left">
+					<view class="text-black text-28 bold">
+						{{userInfo.NickName?userInfo.NickName:userInfo.UserName}}
+					</view>
+					<view class="text-999999 text-24 margin-top-xs">
+						{{list[0].CreateTime}}
+					</view>
+				</view>
+			</view>
+			<view class="margin-top-25 text-black text-26" style="height: 37rpx;line-height: 37rpx;">
+				反馈类型：{{list[0].Tags==0?'意见':''}}
+						{{list[0].Tags==1?'体验':''}}
+						{{list[0].Tags==2?'BUG':''}}
+						{{list[0].Tags==3?'需求':''}}
+						{{list[0].Tags==4?'其他':''}}
+			</view>
+			<view class="padding-tb text-black text-26">
+				反馈意见：{{list[0].Feedback}}
+			</view>
+			<view class="margin-top-25 flex flex-wrap">
+				<image class="icon-135 margin-bottom {{indexs%3==3&&index>0?'margin-right-0':'margin-right'}}"  src="{{list[0].Img}}" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="bg-white padding margin margin-top-0 radius-20 padding-bottom-sm " a:if="{{list[0].Contents}}" >
+			<view class="flex">
+				<image class="icon-80 radius-all" src="/static/image/kf.png" mode="widthFix"></image>
+				<view class="margin-left">
+					<view class="text-black text-28 bold">
+						客服
+					</view>
+					<view class="text-999999 text-24 margin-top-xs">
+						{{list[0].UpdateTime}}
+					</view>
+				</view>
+			</view>
+			<view class="margin-top-25 text-black text-26" style="height: 37rpx;line-height: 37rpx;">
+				{{list[0].Contents}}
+			</view>
+			
+		</view>
+		<view style="padding-bottom: 60rpx;">
+			<view class="bg-white padding margin margin-top-0 radius-20 padding-bottom-sm " a:if="{{list[0].Childs}}" a:for="{{list[0].Childs}}">
+				<view class="flex">
+					<image class="icon-80 radius-all" src="{{userInfo.HeadImg}}" mode="widthFix"></image>
+					<view class="margin-left">
+						<view class="text-black text-28 bold">
+							{{userInfo.NickName?userInfo.NickName:userInfo.UserName}}
+						</view>
+						<view class="text-999999 text-24 margin-top-xs">
+							{{item.CreateTime}}
+						</view>
+					</view>
+				</view>
+				<view class="margin-top-25 text-black text-26" style="height: 37rpx;line-height: 37rpx;">
+					{{item.NewNews}}
+				</view>
+				
+			</view>
+		</view>
+		
+		<view class="" style="height: 120rpx;"></view>
+		<view class="fixed-bottom bg-white">
+			<view class="flex justify-between padding align-center">
+				<view class="inputBox">
+					<input focus="{{focus}}" enableNative="{{false}}" class="padding-lr-xs text-sm" type="text" value="{{inputValue}}" placeholder="输入消息..." onInput="inputV" />
+				</view>
+				<view class="" onTap="send">
+					<text class="send">发送</text>
+				</view>
+			</view>
+		</view>
+	</view>

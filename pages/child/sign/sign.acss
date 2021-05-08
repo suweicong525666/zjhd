@@ -1,0 +1,94 @@
+page{
+		width: 100%;
+		height: 100%;
+		background-color: #FFFFFF;
+	}
+/* 选中样式 */
+.sihnIn-box{
+	width: 135rpx;
+	height: 162rpx;
+	opacity: 1;
+	background:linear-gradient(180deg,#ffd13a, #ff9516)!important;
+	border-radius: 10rpx;
+	margin-right: 30rpx;
+}
+/* 未选中样式 */
+.sihnIn-box-n{
+	width: 135rpx;
+	height: 162rpx;
+	opacity: 1;
+	background: #F0F0F2;
+	border-radius: 10rpx;
+	margin-right: 30rpx;
+}
+/* 选中样式 第七天*/
+.sihnIn-box-big{
+	width: 300rpx;
+	height: 162rpx;
+	opacity: 1;
+	background: #E88918;
+	border-radius: 10rpx;
+	position: relative;
+}
+/* 未选中样式第七天 */
+.sihnIn-box-n-big{
+	width: 300rpx;
+	height: 162rpx;
+	opacity: 1;
+	background: #F0F0F2;
+	border-radius: 10rpx;
+	position: relative;
+}
+.jinbi_{
+	    position: absolute;
+	    right: 20rpx;
+	    bottom: 0;
+}
+.qd{
+	width: 630rpx;
+	height: 80rpx;
+	opacity: 1;
+	background:linear-gradient(180deg,#ff9516, #ff9516);
+	border-radius: 10rpx;
+	color:#FFFFFF;
+	text-align: center;
+	line-height: 80rpx;
+}
+.qdImg{
+	width: 390rpx;
+	height: 390rpx;
+}
+.qd-white-box{
+	width: 570rpx;
+	margin: 0 auto;
+	opacity: 1;
+	background: #ffffff;
+	border-radius: 20rpx;
+}
+.qd-white-box .child{
+	padding-top: 15rpx;
+}
+.qd-white-box .button{
+	width: 270rpx;
+	margin: 0 auto;
+	height: 70rpx;
+	text-align: center;
+	line-height: 70rpx;
+	opacity: 1;
+	background:linear-gradient(90deg,#fd802f 2%, #fc9900);
+	border-radius: 35rpx;
+	color: #FFFFFF;
+	margin-top: 55rpx;
+}
+.close{
+	margin-top: 80rpx;
+}
+.qd-modal{
+	position: fixed;
+	width: 100%;
+	top: 220rpx;
+	z-index: 999999;
+}
+.text-white{
+  color: #fff!important
+}

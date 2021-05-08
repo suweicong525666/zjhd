@@ -1,0 +1,21 @@
+{
+  "modes": [
+    {
+      "title": "签到页",
+      "page": "pages/child/sign/sign"
+    },
+    {
+      "title": "邀请",
+      "page": "pages/child/invitation/invitation"
+    },
+    {
+      "title": "余额明细",
+      "page": "pages/child/balanceDetail/balanceDetail"
+    },
+    {
+      "title": "ceshi",
+      "page": "pages/index/index",
+      "pageQuery": "channel=alivetaobao"
+    }
+  ]
+}

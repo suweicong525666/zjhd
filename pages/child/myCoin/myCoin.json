@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "我的金币",
+  "allowsBounceVertical": "NO",
+  "transparentTitle": "always",
+  "titlePenetrate": "YES",
+   "titleBarColor": "#000000"
+}

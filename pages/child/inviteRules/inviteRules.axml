@@ -1,0 +1,49 @@
+<view>
+		<view class="">
+			<image style="width: 100%;" src="../../../static/image/hdgz.png" mode="widthFix"></image>
+		</view>
+		<view class="activityRules">
+			<view class="text-26 text-black">
+				<view class="">
+					<view class="padding-xs">
+						1、在活动期间内，成功邀请新用户完成2个首页任务，邀请者和受邀新用户均可获得集分宝奖励。
+					</view>
+					
+					<view class="padding-left padding-xs">
+						1.1、新用户是指从未在开心赚点小程序完成过首页任务的用户;
+					</view>
+					
+					<view class="padding-left padding-xs">
+						1.2、集分宝奖励会直接发放到集分宝账户(搜索小程序集分宝可查看明细)，付款时可抵扣。
+					</view>
+					
+					<view class="padding-xs">
+							2、奖励发放条件详细说明:
+					</view>
+					<view class="padding-left padding-xs">
+							2.1、在活动期间内，被邀请新用户通过邀请者的吱口令、邀请图片中的二维码、邀请链接方式进入开心赚点小程序
+					</view>
+					<view class="padding-left padding-xs">
+						2.2、受邀新用户在之前未通过其他人的邀请进入过开心赚点;
+					</view>
+					<view class="padding-left padding-xs">
+							2.3、邀请者的奖励、受邀新用户的奖励，会在受邀新用户进入开心赚点小程序、并完成2个首页任务后，发放至各自集分宝账户;
+					</view>
+					<view class=" padding-xs">
+							3、每个新用户有且仅可以得到一次被邀请奖励，且被邀请成功后即与邀请者进行绑定，不可被他人邀请。
+					</view>
+					<view class=" padding-xs">
+							4、邀请者每成功邀请一个新用户完成2个首页任务，即可获得集分宝奖励。邀请越多，奖励越多。
+					</view>
+					<view class=" padding-xs">
+							5、集分宝奖励规则:邀请者可获得3个集分宝奖励，受邀新用户可获得2个集分宝，每个新用户有且仅可以得到一次被邀请奖励奖励
+							
+							*如发现通过不正当行为参与开心赚点活动，平台有权终止合作，并冻结账户。
+					</view>
+					<view class=" padding-xs">
+							6.活动最终解释权归开心赚点所有。
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>

@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cashout/cashout",
+    "pages/center/center",
+    "pages/child/sign/sign",
+    "pages/child/allTasks/allTasks",
+    "pages/child/balance/balance",
+    "pages/child/balanceDetail/balanceDetail",
+    "pages/child/luckdraw/luckdraw",
+    "pages/child/feedback/feedback",
+    "pages/child/myFeedback/myFeedback",
+    "pages/child/reply/reply",
+    "pages/child/myCoin/myCoin",
+    "pages/child/invitation/invitation",
+    "pages/child/inviteRules/inviteRules",
+    "pages/child/activityRules/activityRules",
+    "pages/child/test/test"
+  ],
+  "tabBar": {
+    "textColor": "#999999",
+    "selectedColor": "#FF9516",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "首页",
+        "icon": "static/image/tar_sy2.png",
+        "activeIcon": "static/image/tar_sy1.png"
+      },
+      {
+        "pagePath": "pages/cashout/cashout",
+        "name": "抽现金",
+        "icon": "static/image/tar_cj2.png",
+        "activeIcon": "static/image/tar_cj1.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "name": "我的",
+        "icon": "static/image/tar_wd2.png",
+        "activeIcon": "static/image/tar_wd1.png"
+      }
+    ]
+  },
+  "plugins": {
+    "myPlugin": {
+      "version": "*",
+      "provider": "2021001154677005"
+    },
+    "subscribeMsg": {
+      "version": "*",
+      "provider": "2021001155639035"
+    }
+  },
+  "window": {
+    "defaultTitle": "",
+    "enableInPageRender": "YES"
+  }
+}

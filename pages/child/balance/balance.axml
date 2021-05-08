@@ -1,0 +1,83 @@
+<view>
+		<view class="top"></view>
+		<view class="relative">
+			<image style="width: 100%;" src="../../../static/image/mine-bj.png" mode="widthFix"></image>
+			<view class="top-box">
+				<view class="text-24 text-black">
+					可提现金额（元）
+				</view>
+				<view class="margin-top-sm flex justify-between align-center" style="width: 100%;">
+					<view class="">
+						<text class="text-40 bold">￥</text>
+						<text class="text-60 bold">{{userInfo.Money}}</text>
+					</view>
+					<view class="" onTap="jump_balanceDetail" data-index="0">
+						<text class="text-24 text-black">查看明细</text>
+						<text class="text-24 text-black cuIcon-right margin-left-xs"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="main">
+			<view class="text-24 text-black">
+				提现余额
+			</view>
+			<view class="flex grid col-3 margin-top-sm">
+				<view class="text-center margin-bottom-sm" a:for="{{moneyList}}" a:for-index="index" onTap="tabMoney" data-index="{{index}}">
+					<view class="{{index==moneyIndex?'moneyButton':'moneyButton-no'}}" >
+						{{item.ButtonAmount}}
+					</view>
+				</view>
+				
+			</view>
+			<!-- <view class="flex justify-between align-center margin-top-xl solid-bottom padding-bottom-sm">
+				<input type="text" :value="money" placeholder="请输入提现金额" class="text-24 text-left padding-left-0" placeholder-class="text-999999 text-left po"  />
+				<text class="text-FF9516 text-24">全部提现</text>
+			</view> -->
+			<view class="submit" onTap="submit">
+				确认提现
+			</view>
+		</view>
+		<view class="jfb padding">
+			<view class="text-24 text-black">
+				已赚集分宝(集分宝实时到账，支付宝搜索[集分宝]可查看)
+			</view>
+			<view class="margin-top flex justify-between align-center solid-bottom padding-bottom">
+				<view class="text-40 bold">
+					{{userInfo.Jifenbao}}
+				</view>
+				<view class="" onTap="jump_balanceDetail" data-index="1">
+					<text class="text-24 text-999999">查看明细</text>
+					<text class="text-24 text-999999 cuIcon-right margin-left-xs"></text>
+				</view>
+			</view>
+			<view class="margin-top-sm text-24 text-999999">
+				10集分宝=0.1元，当前已赚{{userInfo.Jifenbao}}集分宝
+			</view>
+		</view>
+		<!-- 规则说明 -->
+		<view class="margin">
+			<view class="text-black text-24">
+				规则说明：
+			</view>
+			<view class="text-999999 text-24 margin-top-sm">
+				1.每日只可提现一次，单次最少提现0.1元，最大可提现10元。	
+			</view>
+			<view class="text-999999 text-24 margin-top-xs">
+				2.提现预计10秒内到账(如提现是遇到高峰期，提现可能会有延迟，我们会在一个工作日内处理，请耐心等待;
+			</view>
+			<view class="text-999999 text-24 margin-top-xs">
+				3.提现清零:自2021-03-01起，如果您连续60日未登录，您可提现金额将会自动清零，系统会在清零前向用户发送提现提醒，如用户仍未提现，则视为用户自愿放弃提现的权利;
+			</view>
+			<view class="text-999999 text-24 margin-top-xs">
+				4.提现到账查询:支付宝->我的->账单。若有名称为[开心赚点提现]的账单，即为成功到账;您也可以点击”余额明细"查看提现是否成功;
+			</view>
+			<view class="text-999999 text-24 margin-top-xs">
+				5.集分宝提现后，您可以在支付宝搜索”集分宝"，进入集分宝官方小程序，通过"我的"->"集分宝明细"查看是否提现成功
+			</view>
+			<view class="text-999999 text-24 margin-top-xs">
+				6.若提现遇到问题，您可以通过"我的"-> "意见反馈"联系我们，我们会在一个工作日内处理您反馈的问题;
+			</view>
+
+		</view>
+	</view>

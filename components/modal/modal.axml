@@ -1,0 +1,27 @@
+<!-- 	关注生活号模态框弹窗 -->
+			<view class="" a:if="{{modalName=='life'}}" >
+				<view class="modal"></view>
+				<view class="modal-main">
+					<view class="relative text-center">
+						<image src="../../static/image/hb.png" mode="widthFix"></image>
+						<view class="guanzhuTittle">
+							<view class="">
+								{{lifeTittle}}
+							</view>
+							<view class="margin-top" style="font-size: 30rpx;">
+								{{lifeSutittle}}
+							</view>
+						</view>
+
+						<view class="guanzhuTextButton">
+							<life-follow  sceneId="{{sceneId}}"   a:if="show" checkFollow="checkFollow" checkFollow="checkFollowCb" close="closeCb" />
+						</view>
+						<image class="guanzhuImg" :src="lifeImg" mode="widthFix"></image>
+						<view class="margin-top">
+							<image onTap="hongbao_close" class="icon-70" src="../../static/image/del.png" mode="widthFix"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+     
+    

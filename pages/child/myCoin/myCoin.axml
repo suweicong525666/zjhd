@@ -1,0 +1,55 @@
+<view>
+		<view class="top">
+			<view class="text-white padding-left padding-tb-xl">
+				可兑换金币（10000=1元）
+			</view>
+			<view class="flex justify-between margin-lr solid-b padding-bottom">
+				<view class="text-40 bold text-white">
+					{{userInfo.Coin}}
+				</view>
+				<view class="qcj">
+					<text class="text-FF623E" onTap="duihuan">兑换</text>
+					<text class="lg text-FF623E cuIcon-right margin-left-xs"></text>
+				</view>
+			</view>
+			<view class="flex justify-between margin-lr margin-top-sm">
+				<view class="text-26 text-white" a:if="{{userInfo.TodaySum}}">
+					今日金币:{{userInfo.TodaySum}}
+				</view>
+				<view class="text-26 text-white" a:if="{{userInfo.Sum}}">
+					累计金币:{{userInfo.Sum}}
+				</view>
+			</view>
+		</view>
+		<view class="bg-white flex justify-around relative" style="height: 90rpx;padding-top: 25rpx;">
+			<view class="text-28 relative {{index==tabIndex?'text-E88918 bold':'text-999999'}}" a:for="{{tabList}}" a:for-index="index" onTap="tab" data-index="{{index}}" >
+				<view class="text-center">
+					{{item}}
+				</view>
+				<text class="border-b" a:if="{{index==tabIndex}}"></text>
+			</view>
+			<text class="border-l" a:if="{{index==tabIndex}}"></text>
+		</view>
+		<view class="margin bg-white radius-20" a:for="{{list}}" >
+			<view class="padding-left padding-top padding-bottom-xs text-24 text-999999">
+				{{item.Key}}
+			</view>
+			<view class="flex justify-between margin-top-sm padding-lr padding-bottom" a:for="{{item.Value}}" a:for-index="indexs" a:for-item="items">
+				<view class="text-26 text-black">
+					{{items.Time}}{{items.Title}}  
+				</view>
+				<view class="flex align-center">
+					<text class="text-F5741D">{{items.ChangeValue}}</text>
+					<image class="icon-40 margin-left-xs" src="../../../static/image/jb.png" mode="widthFix"></image>
+				</view>
+			</view>
+		</view>
+		<view class="text-999999 list-0" style="top:60%" a:if="{{list.length==0}}">
+			<view class="text-center">
+				<image src="../../../static/image/zw.png" mode="widthFix"></image>
+			</view>
+			<view class="text-center">
+				暂无数据~~
+			</view>
+		</view>
+	</view>

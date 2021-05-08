@@ -1,0 +1,36 @@
+<view>
+		<view class="bg-white padding margin margin-top-0 radius-20 padding-bottom-0" a:for="{{list}}" onTap="jump_reply" data-id="{{item.Id}}">
+			<view class="flex">
+				<image class="icon-80" src="{{userInfo.HeadImg}}" mode="widthFix"></image>
+				<view class="margin-left">
+					<view class="text-black text-28 bold">
+						{{userInfo.NickName?userInfo.NickName:userInfo.UserName}}
+					</view>
+					<view class="text-999999 text-24 margin-top-xs">
+						{{item.CreateTime}}
+					</view>
+				</view>
+			</view>
+			<view class="margin-top-25 text-black text-26" style="height: 37rpx;line-height: 37rpx;">
+				反馈类型：{{item.Tags==0?'意见':''}}
+						{{item.Tags==1?'体验':''}}
+						{{item.Tags==2?'BUG':''}}
+						{{item.Tags==3?'需求':''}}
+						{{item.Tags==4?'其他':''}}
+			</view>
+			<view class="padding-tb text-black text-26">
+				反馈意见：{{item.Feedback}}
+			</view>
+			<view class="margin-top-25 flex flex-wrap">
+				<image class="icon-135 margin-bottom {{indexs%3==3&&index>0?'margin-right-0':'margin-right'}}"  src="{{item.Img}}" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="text-center text-999999 list-0" a:if="{{list.length==0}}">
+			<view class="text-center">
+				<image src="../../../static/image/zw.png" mode="widthFix"></image>
+			</view>
+			<view class="text-center">
+				暂无反馈~~
+			</view>
+		</view>
+	</view>

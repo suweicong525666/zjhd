@@ -1,0 +1,47 @@
+<view>
+		<!-- 头部tab栏 -->
+		<view class="bg-white flex justify-around fixed-top" style="height: 90rpx;padding-top: 25rpx;">
+			<view class="text-28 relative {{index==tabIndex?'text-FF9516 bold':'text-999999'}}"  a:for="{{tabList}}" a:for-index="index" onTap="tab" data-index="{{index}}" >
+				<view class="text-center">
+					{{item}}
+				</view>
+				<text class="border-b" a:if="{{index==tabIndex}}"></text>
+			</view>
+		</view>
+		<view class="fixed-top-b"></view>
+		<!-- 主体内容 -->
+		<view class="">
+			<view class="bg-white flex radius-20 margin padding-tb-sm margin-top-sm relative" a:for="{{list}}">
+				<view class="relative">
+					<image class='main-img' src="{{item.Img}}" mode="widthFix"></image>
+					<text class="Quota text-30 text-white">{{item.Quota}}元</text>
+				</view>
+				<view class="flex-70">
+					<view class="text-30 text-black bold margin-top-sm">
+						红包抽{{item.Quantity}}份
+					</view>
+					<view class="flex justify-between margin-top-sm">
+						<text class="text-E8463B text-28 bold">{{item.Coin}}金币</text>
+						<text class="text-24 text-999999">共{{item.Number}}人参与</text>
+					</view>
+					<view class="kg margin-top-sm">
+						<text>{{item.DrawTime}}自动开奖</text>
+						<text class="cashGo">{{item.DrawStatus==1?'等待开奖':'已开奖'}}</text>
+					</view>
+				</view>
+				<image a:if="{{item.DrawStatus==2&&item.IsWin}}" class="icon-85 IsWin" src="../../../static/image/yzj.png" mode="widthFix"></image>
+				<image a:if="{{item.DrawStatus==2&&!item.IsWin}}" class="icon-85 IsWin" src="../../../static/image/wzj.png" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="text-999999 list-0" a:if="{{list.length==0}}">
+			<view class="text-center">
+				<image src="../../../static/image/zw.png" mode="widthFix"></image>
+			</view>
+			<view class="text-center">
+				暂无抽奖记录~~
+			</view>
+		</view>
+		<view class="text-center text-999999 padding-bottom-xl" a:if="{{list.length>0&&noMore}}">
+			暂无更多抽奖记录~~
+		</view>
+	</view>

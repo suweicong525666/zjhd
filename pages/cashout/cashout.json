@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "",
+  "navigationStyle":"custom",
+  "allowsBounceVertical": "NO",
+  "transparentTitle": "always",
+  "titlePenetrate": "YES",
+  "usingComponents": {}
+}

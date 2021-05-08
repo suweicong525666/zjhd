@@ -1,0 +1,31 @@
+<view>
+		<view class="margin-lr bg-white radius padding padding-bottom-xs ">
+			<view class="text-28 text-black bold ">
+				选择标签
+			</view>
+			<view class="grid col-4 margin-top">
+				<view class="margin-bottom-sm"  a:for="{{chooseList}}" a:for-index="index" onTap="tab" data-index="{{index}}">
+					<text class="{{index==chooseIndex?'click':'click-no'}}">{{item}}</text>
+				</view>
+			</view>
+		</view>
+		
+		<view class="bg-white margin-top-sm radius-20 padding margin-lr">
+			<view class="text-28 text-black bold">
+				填写意见
+			</view>
+			<textarea class="margin-top text-24 padding-xs" focus="{{focus}}" enableNative="{{false}}" onInput="input" value="" placeholder="请在此描述问题" placeholder-class="text-24 text-999999 padding-top-0" />
+			<view class="flex flex-wrap ">
+				<view class="margin-right margin-top relative" a:for="{{imgList}}" a:for-index="index" a:if="{{imgList}}">
+					<image class="icon-135" src="{{item}}" mode="widthFix"></image>
+					<image class="close" src="../../../static/image/delete.png" mode="widthFix" onTap="del" data-index="{{index}}"></image>
+				</view>
+				<view class="margin-right margin-top" onTap="chooseImg" a:if="{{imgList.length<1}}" >
+					<image class="icon-135" src="../../../static/image/tjtp.png" mode="widthFix"></image>
+				</view>
+			</view>
+		</view>
+		<view class="button" onTap="submit">
+			确认提交
+		</view>
+	</view>

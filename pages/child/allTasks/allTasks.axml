@@ -1,0 +1,159 @@
+	<view class="">
+			<view class="padding">
+				<view class="relative flex justify-between padding margin-bottom-sm {{index%3==0?'bg-FFF3E5':''}}{{index%3==1?'bg-E9F7FF':''}}{{index%3==2?'bg-FDE9FF':''}}"  a:for="{{list}}" a:for-item="item" data-JumpType="{{item.JumpType}}" data-item="{{item}}"  onTap="tabNav">
+					<view class="flex">
+						<image class="icon-80" src="{{item.Img}}" mode="widthFix"></image>
+						<view class="margin-left-sm" style="height:80rpx">
+							<view class="text-28 bold text-F5741D flex align-center" style="height:50%;padding-top:4rpx">
+								<text>{{item.Title}}</text>
+								<view class="flex align-center margin-left-sm">
+									<image a:if="item.Type==2" class="icon-34" src="/static/image/jfb.png" mode="widthFix"></image>
+									<image a:else class="icon-34" src="/static/image/jb.png" mode="widthFix"></image>
+									<text class="text-F5741D text-24 bold margin-left-xs padding-top-xss">+{{item.RewardAmount}}{{item.TypeString}}</text>
+								</view>
+							</view>
+							<view class="text-999999 text-24 flex align-end" style="height:50%">
+								{{item.Subtitle}}
+							</view>
+						</view>
+					</view>
+					<view class="relative">
+						<view class="margin-top-xs" >
+							<text class="index-button {{index%3==0?'bg-FFF3E52':''}} {{index%3==1?'bg-E9F7FF2':''}} {{index%3==2?'bg-FDE9FF2':''}}">{{item.ButtonTitle?item.ButtonTitle:'前往领取'}}</text>
+						</view>
+					<view a:if="{{item.IsDone}}" style="position: absolute;top:20rpx;left:-20rpx;transform: translate(-100%,-50%);transform: scale(1.0,1.7);opacity: 0;">
+                <life-follow  sceneId="{{item.Component}}"   a:if="{{show}}" checkFollow="{{checkFollow}}" onCheckFollow="checkFollowCb" onClose="closeCb"></life-follow>
+							</view>
+					</view>
+					<image a:if="{{item.IsDone}}" style="position: absolute;right:0rpx;top:0rpx" class="icon-85" src="/static/image/yiwc.png" mode="widthFix"></image>
+				</view>
+			</view>
+		</view>
+
+    <view class="text-999999 list-0" a:if="{{list.length==0}}">
+			<view class="text-center">
+				<image src="/static/image/zw.png" mode="widthFix"></image>
+			</view>
+			<view class="text-center">
+				暂无任务~~
+			</view>
+		</view>
+		<view class="text-center text-999999 padding-bottom-xl" a:if="{{list.length>0&&noMore}}">
+			暂无更多任务~~
+		</view>
+
+
+   	<!-- 	普通广告模态框弹窗 -->
+		<view class="" a:if="{{modalShow}}" >
+			<view class="modal"></view>
+		<view class="modal-main">
+				<view class="relative text-center">
+					<image src="/static/image/jinbi3.png" mode="widthFix"></image>
+          <view class="modal_button" onTap="closeModal" >
+              立即领取
+          </view>
+					<view class="text-26 text-666666 text-center" style="position:absolute;width:100%;top:290rpx">
+						<view class="">
+							恭喜获得
+						</view>
+						<view class="bold margin-top main_huode" style="">
+              <text class="modal_text" style="font-size:70rpx">+{{RewardAmount}}</text>
+              <text>{{modalType==1?'金币':'集分宝'}}</text>
+						</view>
+						<view class="dasheds"></view>
+						<view class="margin-top-lg padding-lr relative">
+							<ad  class="modal-ad1"
+							unit-id ="ad_tiny_2021002139665742_202104272200009638"
+               onLoad ="onRenderSuccess_rwwc"
+							/>
+							<view class="flex justify-center">
+                    <swiper class="screen-swipers modal-ad1 {{dotStyle?'square-dot':'round-dot'}}"  a:if="{{!rw_alBanShow}}"  :indicator-dots="true" :circular="true"
+                :autoplay="false" interval="5000" duration="500">
+                      <swiper-item a:for="{{rwBanner}}">
+                        <view class="" data-JumpType="{{item.JumpType}}" data-item="{{item}}"  onTap="tabNav">
+                          <image src="{{item.Img}}" mode="scaleToFill" style="width: 600rpx;height: 110rpx" ></image>
+                        </view>
+                      </swiper-item>
+                </swiper>
+              </view>
+						</view>
+					</view>
+					
+					<view class="margin-top">
+						<image onTap="closeModal" class="icon-70" src="/static/image/del.png" mode="widthFix"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+
+
+      
+
+<!-- <modal onHidetest= "hidetest" modalname="life" lifeTittle="{{lifeTittle}}" lifeSutittle="{{lifeSutittle}}" a:if="{{modalname=='life'}}"></modal> -->
+<!-- 关注生活模态框 -->
+<view class="" a:if="{{modalname=='life'}}" >
+				<view class="modal"></view>
+				<view class="modal-main">
+					<view class="relative text-center">
+						<image src="/static/image/hb.png" mode="widthFix"></image>
+						<view class="guanzhuTittle">
+							<view class="">
+								{{lifeTittle}}
+							</view>
+							<view class="margin-top" style="font-size: 30rpx;">
+								{{lifeSutittle}}
+							</view>
+						</view>
+
+						<view class="guanzhuTextButton">
+							 <life-follow  sceneId="{{sceneId}}"   a:if="{{show}}" checkFollow="{{checkFollow}}" onCheckFollow="checkFollowCb" onClose="closeCb"></life-follow>
+						</view>
+						<image class="guanzhuImg" src="{{lifeImg}}" mode="widthFix"></image>
+						<view class="margin-top">
+							<image onTap="closeModal" class="icon-70" src="/static/image/del.png" mode="widthFix"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+     
+     <!-- 	添加桌面 -->
+				<view class="" a:if="{{modalname=='zhuomian'}}">
+					<view class="modal" onTap="closeModal"></view>
+					<view class="zmMain">
+						<view class="flex justify-end" style="padding-right: 1.2rem;">
+                	<image class="hand icon-40" src="/static/image/shoushi.png" mode="widthFix"></image>
+						</view>
+             <view class="text-right text-32 text-white margin-top-sm" style="padding-right:0.5rem">
+                  添加到我的桌面
+              </view>
+						<view class="zhuomian_child">
+                <view class="text-32 text-white flex align-center">
+                    <text>1.点击右上角</text>
+                    <image class="icon-62" mode="scaleToFill" src="/static/image/dian.png"/>
+                    <text>选择添加到桌面</text>
+                    <image class="icon-62" mode="scaleToFill" src="/static/image/shouji.png"/>
+						    </view>
+                <view class="text-32 text-white flex align-center margin-top-xl">
+                    <text>2.点击</text>
+                    <image class="icon-62" mode="scaleToFill" src="/static/image/tuichu.png"/>
+                    <text>退出[指尖互动]</text>
+						    </view>
+                <view class="text-32 text-white flex align-center margin-top">
+                    <text>3.从手机的桌面打开</text>
+                    <view class="margin-left-xs">
+                       <view class="text-center">
+                           <image class="icon-130" mode="scaleToFill" src="/static/image/logo1.png"/>
+                       </view>
+                       <view class="text-center">
+                             <text>[指尖互动]</text>
+                       </view>
+                    </view>
+						    </view>
+                 <view class="text-32 text-white flex align-center margin-top-xl padding-left-xl">
+                    <text>领取{{RewardAmount}}</text>
+                    <image class="icon-40" mode="scaleToFill" src="/static/image/jb2.png"/>
+                    <text>奖励</text>
+						    </view>
+            </view>
+					</view>
+				</view>

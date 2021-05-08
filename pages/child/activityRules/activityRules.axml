@@ -1,0 +1,41 @@
+<view>
+		<view class="">
+			<image style="width: 100%;" src="../../../static/image/hdgz.png" mode="widthFix"></image>
+		</view>
+		<view class="activityRules">
+			<view class="text-26 text-black">
+				<view class="">
+					<view class="padding-xs">
+						1金币抽现金规则
+					</view>
+					
+					<view class="padding-xs">
+						●活动开始后，在开奖之前，每个用户只要投入相应的金币数即可报名参与，报名后金币不予退还
+					</view>
+					
+					<view class="padding-xs">
+						●到达开奖时间后，平台会随机抽取红包对应数量的幸运用户发放奖励(注:具体数量请关注活动页)。开奖之后奖励会自动发放到您的账户余额，您可以通过资金明细查看您的资金记录，也可以通过"我的"--"抽奖记录"查看您的参与记录以及中奖信息
+					</view>
+					
+					<view class="padding-xs">
+						●参与活动过程中，如用户出现违规行为(如利用黑客工具，软件作弊等),本平台有权取消用户中奖资格;
+					</view>
+					<view class="padding-xs">
+						●活动期间发生任何不可抗力事件使本活动或本次活动目的不能实现，本平台因此免责。不可抗力是指不能控制、不可预见或不能避免，即使预见亦无法避免的事件，该事件使任何一方根据本协议履行其全部或部分义务已不可能。包括社会异常事件，自然灾害或政府管制行为而造成的网络关闭等非本平台过错行为
+					</view>
+					<view class="padding-xs">
+						2重要提示
+					</view>
+					<view class="padding-xs">
+						●若您在参与活动过程中遇到问题 
+					</view>
+					<view class="padding-left padding-xs">
+						a:可通过"我的→建议反馈"告知我们，我们会在一个工作日内处理您反馈的问题
+					</view>
+					<view class="padding-left padding-xs">
+						b:右上"•••"→在线客服咨询。
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
